@@ -9,10 +9,13 @@ var payment = new AnyPay({
 ```
 
 Узнаем комиссии проекта.
-
 ```js
 await payment.api.getCommissions(projectId); // => Promise<Object>
 ```
+| Параметр | Тип | Описание |
+|----------|--------|------------------|
+| projectId | Number | Id проекта |
+
 Возвращает следующие свойства
 
 | Параметр | Тип | Описание |
