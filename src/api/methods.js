@@ -75,6 +75,7 @@ class API {
           `payments${this.options.apiId}${projectId}${this.options.apiKey}`
         ),
         project_id: projectId,
+        offset: count,
       },
     });
   }
