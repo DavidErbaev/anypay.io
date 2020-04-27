@@ -10,7 +10,7 @@ var payment = new AnyPay({
 
 Узнаем баланс
 ```js
-    await payment.api.getBalance() // => Promise<Object>
+await payment.api.getBalance() // => Promise<Object>
 ```
 Возвращает следующие свойства
 
