@@ -1,6 +1,6 @@
-# Документация
+# Documentation
 
-* Справка API
+* API help
          * [AnyPay](api-reference/anypay.md)
                 * [getBalance](api-reference/balance.md)
                 * [getRates](api-reference/rates.md)
