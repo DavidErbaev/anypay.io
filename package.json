@@ -1,0 +1,60 @@
+{
+  "_from": "anypay.io",
+  "_id": "anypay.io@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-F7Ccg/8F+6i7l8Er76uYoZMcynDXbgepAEh1h+HZQ9tWF83NyY0oyV92GqAE2xXchPVXafyLzEYZSEOCSVMTzQ==",
+  "_location": "/anypay.io",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "anypay.io",
+    "name": "anypay.io",
+    "escapedName": "anypay.io",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/anypay.io/-/anypay.io-1.0.1.tgz",
+  "_shasum": "0477e7bf511be4136bf07c9ab5eb2484311c59e1",
+  "_spec": "anypay.io",
+  "_where": "C:\\Users\\Администратор\\Desktop\\Боты\\JS\\WlsBot",
+  "author": {
+    "name": "David Volkov",
+    "url": "vk.com/id500580851"
+  },
+  "bugs": {
+    "url": "https://github.com/DavidErbaev/anypay.io/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "debug": "^4.1.1",
+    "form-data": "^3.0.0",
+    "middleware-io": "^2.1.0",
+    "node-fetch": "^2.6.0",
+    "express": "^4.17.1",
+    "ip": "^1.1.5",
+    "sha256": "0.2.0"
+  },
+  "deprecated": false,
+  "description": "Module for the AnyPay payment system.",
+  "homepage": "https://github.com/DavidErbaev/anypay.io#readme",
+  "keywords": [
+    "anypay",
+    "anypay-io",
+    "anypay.io",
+    "payment system"
+  ],
+  "license": "ISC",
+  "main": "src/index.js",
+  "name": "anypay.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidErbaev/anypay.io.git"
+  },
+  "version": "1.0.2"
+}
