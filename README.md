@@ -6,7 +6,7 @@
 
 ## Installation
 ```bash
-npm i vk-io-longpoll
+npm i anypay.io
 ```
 
 ## Example
