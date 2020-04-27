@@ -10,12 +10,11 @@ var payment = new AnyPay({
 
 Получение списка транзакций
 ```js
-    await payment.api.getPayments(projectId, count) // => Promise<Object>
+await payment.api.getPayments(projectId, count) // => Promise<Object>
 ```
 | Параметр | Тип | Описание |
 |------------------|-------|------------------|
 | projectId | Number | Id проекта |
-|------------------|-------|------------------|
 | count | Number | Кол-во выводимых объектов |
 
 Возвращает следующие свойства
