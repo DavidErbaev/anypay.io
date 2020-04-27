@@ -1,12 +1,12 @@
 # anypay.io
 
 ## Description
->[EN] Module for using the payment system API AnyPay.
+>[EN] Module for using the payment system API AnyPay.<br/>
 >[RU] Модуль для использования платежной системы API AnyPay.
 
 ## Installation
 ```bash
-npm i vk-io-longpoll
+npm i anypay.io
 ```
 
 ## Example
@@ -27,5 +27,5 @@ const payment = new AnyPay({
 ## README
    * [RU](src/docs/ru/README.md)
    * [EN](src/docs/en/README.md)
-# anypay.io
-# anypay.io
+
+
