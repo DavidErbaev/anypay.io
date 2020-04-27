@@ -1,12 +1,12 @@
 # Documentation
 
-* API help
-         * [AnyPay](api-reference/anypay.md)
-                * [getBalance](api-reference/balance.md)
-                * [getRates](api-reference/rates.md)
-                * [getCommissions](api-reference/commission.md)
-                * [getPayments](api-reference/payments.md)
-                * [getPayouts](api-reference/payouts.md)
-                * [getIps](api-reference/Ips.md)
-                * [createPayout](api-reference/create_payout.md)
-                * [createSession](api-reference/server.md)
+* API help<br/>
+         * [AnyPay](api-reference/anypay.md)<br/>
+                 * [getBalance](api-reference/balance.md)<br/>
+                 * [getRates](api-reference/rates.md)<br/>
+                 * [getCommissions](api-reference/commission.md)<br/>
+                 * [getPayments](api-reference/payments.md)<br/>
+                 * [getPayouts](api-reference/payouts.md)<br/>
+                 * [getIps](api-reference/Ips.md)<br/>
+                 * [createPayout](api-reference/create_payout.md)<br/>
+                 * [createSession](api-reference/server.md)
