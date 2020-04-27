@@ -16,7 +16,7 @@ class API {
   /**
    * Getting the balance
    */
-  async getBalance() {
+  getBalance() {
     return this.call({
       method: "balance",
       sign: this.generateHash(
@@ -27,7 +27,7 @@ class API {
   /**
    * Getting exchange rates
    */
-  async getRates() {
+  getRates() {
     return this.call({
       method: "rates",
       sign: this.generateHash(
@@ -39,7 +39,7 @@ class API {
    *
    * @param {NumberConstructor} projectId
    */
-  async getCommissions(projectId) {
+  getCommissions(projectId) {
     if (!projectId) {
       throw new APIError("Invalid project id");
     }
@@ -59,7 +59,7 @@ class API {
    * @param {NumberConstructor} projectId
    * @param {NumberConstructor} count
    */
-  async getPayments(projectId, count) {
+  getPayments(projectId, count) {
     if (!projectId) {
       throw new APIError("Invalid project id");
     } else if (!count) {
@@ -82,7 +82,7 @@ class API {
   /**
    * Getting a pay list
    */
-  async getPayouts() {
+  getPayouts() {
     return this.call({
       method: "payouts",
       sign: this.generateHash(
@@ -93,7 +93,7 @@ class API {
   /**
    * Getting a list of service IP addresses
    */
-  async getIps() {
+  getIps() {
     return this.call({
       method: "ip-notification",
       sign: this.generateHash(
@@ -105,7 +105,7 @@ class API {
    *
    * @param {JSON} params
    */
-  async createPayout(params = {}) {
+  createPayout(params = {}) {
     if (!params.payout_id) {
       throw new APIError(
         "You did not enter a unique payout number in the seller’s system."
@@ -123,7 +123,7 @@ class API {
     }
 
     return this.call({
-      method: "",
+      method: "create-payout",
       params: {
         ...params,
         sign: this.generateHash(
