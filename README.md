@@ -27,5 +27,5 @@ const payment = new AnyPay({
 ## README
    * [RU](src/docs/ru/README.md)
    * [EN](src/docs/en/README.md)
-# anypay.io
-# anypay.io
+
+
