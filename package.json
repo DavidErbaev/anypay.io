@@ -38,7 +38,8 @@
     "node-fetch": "^2.6.0",
     "express": "^4.17.1",
     "ip": "^1.1.5",
-    "sha256": "0.2.0"
+    "sha256": "0.2.0",
+    "md5": "^2.2.1"
   },
   "deprecated": false,
   "description": "Module for the AnyPay payment system.",
@@ -56,5 +57,5 @@
     "type": "git",
     "url": "git+https://github.com/DavidErbaev/anypay.io.git"
   },
-  "version": "1.0.4"
+  "version": "1.0.5"
 }
