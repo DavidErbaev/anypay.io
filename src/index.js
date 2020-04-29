@@ -25,9 +25,9 @@ class AnyPay {
    * @param {Transfer data} options 
    */
   setOptions(options) {
-    Object.assign(this.options, options);
-    return this;
+     Object.assign(this.options, options);
+     return this;
   }
 }
 
-module.exports = AnyPay;
+exports.AnyPay = AnyPay;
