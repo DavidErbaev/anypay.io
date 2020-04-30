@@ -1,7 +1,7 @@
 # Документация
 
-* <b>Справка API</b><br/>*
-        &#8195; [AnyPay](api-reference/anypay.md)<br/>
+* <b>Справка API</b><br/>
+        &#8195;* [AnyPay](api-reference/anypay.md)<br/>
            &#8195;&#8195;&#8195;* [getBalance](api-reference/balance.md)<br/>
            &#8195;&#8195;&#8195;* [getRates](api-reference/rates.md)<br/>
            &#8195;&#8195;&#8195;* [getCommissions](api-reference/commission.md)<br/>
