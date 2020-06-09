@@ -13,8 +13,9 @@ npm i anypay.io
 ```js
 const { AnyPay } = require('anypay.io')
 const payment = new AnyPay({
-   apiId: process.env.API_ID
-   apiKey: process.env.API_KEY
+    apiId: process.env.API_ID,
+    secretKey: process.env.SECRET_KEY,
+    apiKey: process.env.API_KEY
 })
 
 (async () => {

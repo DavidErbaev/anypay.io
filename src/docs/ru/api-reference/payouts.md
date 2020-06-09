@@ -4,6 +4,7 @@
 var { AnyPay } = require('anypay.io')
 var payment = new AnyPay({
     apiId: process.env.API_ID,
+    secretKey: process.env.SECRET_KEY,
     apiKey: process.env.API_KEY
 })
 ```

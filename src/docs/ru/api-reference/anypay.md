@@ -18,6 +18,7 @@ const { AnyPay } = require('anypay.io')
 ```js
    new AnyPay({
         apiId: process.env.API_ID,
+        secretKey: process.env.SECRET_KEY,
         apiKey: process.env.API_KEY
    })
 ```
@@ -32,4 +33,5 @@ const { AnyPay } = require('anypay.io')
 | Опция | Тип | Описание | По умолчанию |
 |----------|--------|-----------------------------------|--------------|
 | apiId    | string | API ID | null |
+| secretKey | string | secretKey | null |
 | apiKey | string | API Key | null |

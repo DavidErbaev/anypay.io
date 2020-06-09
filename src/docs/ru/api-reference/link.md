@@ -4,6 +4,7 @@
 var { AnyPay } = require('anypay.io')
 var payment = new AnyPay({
     apiId: process.env.API_ID,
+    secretKey: process.env.SECRET_KEY,
     apiKey: process.env.API_KEY
 })
 ```
@@ -12,7 +13,6 @@ var payment = new AnyPay({
 ```js
 await payment.api.createPaymentLink({
      merchant: 5195,
-     secretKey: 'o7d0S9bQAAkjLW0WLabf138P',
      amount: 10,
      currency: 'RUB',
      pay_id: 10863017,
@@ -23,7 +23,6 @@ await payment.api.createPaymentLink({
 | Параметр | Тип | Описание |
 |-----------|-------|------------------|
 | merchant | number | Id проекта |
-| secretKey | string | Секретный ключ |
 | amount | number | Сумма оплаты |
 | currency | string | Валюта |
 | pay_id | number | Id платежа |

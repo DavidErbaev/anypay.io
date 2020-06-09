@@ -22,6 +22,8 @@ class API {
             throw new APIError(`Invalid apiId`)
         } else if (!this.options.apiKey) {
             throw new APIError(`Invalid apiKey`)
+        } else if (!this.options.secretKey) {
+            throw new APIError(`Invalid secretKey`)
         }
     }
     /**
@@ -42,8 +44,6 @@ class API {
         return new Promise(function(resolve, reject) {
             if (!params.merchant) {
                 throw new APIError(`Invalid merchant id`)
-            } else if (!params.secretKey) {
-                throw new APIError(`Invalid secret key`)
             } else if (!params.amount) {
                 throw new APIError(`Invalid amount`)
             } else if (!params.currency) {
@@ -63,7 +63,7 @@ class API {
                 desc: params.desc ? params.desc : 'use module anypay.io',
                 ...params.params,
                 sign: md5(
-                    `${params.currency}:${params.amount}:${params.secretKey}:${params.merchant}:${params.pay_id}`
+                    `${params.currency}:${params.amount}:${this.options.secretKey}:${params.merchant}:${params.pay_id}`
                 )
             })
             let end = Date.now() - start;
