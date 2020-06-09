@@ -41,6 +41,7 @@ class API {
      * Creating a payment link
      */
     createPaymentLink(params = {}) {
+        const key = this.options.secretKey;
         return new Promise(function(resolve, reject) {
             if (!params.merchant) {
                 throw new APIError(`Invalid merchant id`)
@@ -63,7 +64,7 @@ class API {
                 desc: params.desc ? params.desc : 'use module anypay.io',
                 ...params.params,
                 sign: md5(
-                    `${params.currency}:${params.amount}:${this.options.secretKey}:${params.merchant}:${params.pay_id}`
+                    `${params.currency}:${params.amount}:${key}:${params.merchant}:${params.pay_id}`
                 )
             })
             let end = Date.now() - start;
