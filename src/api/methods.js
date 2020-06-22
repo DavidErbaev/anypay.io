@@ -178,7 +178,7 @@ class API {
             params: {
                 ...params,
                 sign: this.generateHash(
-                    `payments${this.options.apiId}${params.payout_id}${params.payout_type}${params.amount}${params.wallet}${this.options.apiKey}`,
+                    `create-payout${this.options.apiId}${params.payout_id}${params.payout_type}${params.amount}${params.wallet}${this.options.apiKey}`,
                     'sha256'),
             },
         });
