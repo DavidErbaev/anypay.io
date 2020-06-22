@@ -42,7 +42,7 @@ class API {
      */
     createPaymentLink(params = {}) {
         const key = this.options.secretKey;
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
             if (!params.merchant) {
                 throw new APIError(`Invalid merchant id`)
             } else if (!params.amount) {
@@ -68,10 +68,10 @@ class API {
                 )
             })
             let end = Date.now() - start;
-            
+
             return resolve({
                 url: url + parameters,
-                ping: end+'ms'
+                ping: end + 'ms'
             });
         })
     }
@@ -194,11 +194,11 @@ class API {
             throw new APIError(`Specify the handler`)
         }
 
-        app.get(params.url, async function(req, res) {
+        app.get(params.url, async function (req, res) {
             await params.handler(req, res);
         })
 
-        app.listen(port, function(err) {
+        app.listen(port, function (err) {
             if (err) {
                 throw new APIError(`Error:\n${err}`)
             }
