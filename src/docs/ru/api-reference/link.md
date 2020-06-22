@@ -24,6 +24,7 @@ await payment.api.createPaymentLink({
 |-----------|-------|------------------|
 | merchant | number | Id проекта |
 | amount | number | Сумма оплаты |
+| desc | string | Описания платежа |
 | currency | string | Валюта |
 | pay_id | number | Id платежа |
 | params | object | Параметры |

@@ -1,4 +1,4 @@
-# getBalance
+# getIps
 
 ```js
 var { AnyPay } = require('anypay.io')
