@@ -169,7 +169,7 @@ class API {
             throw new APIError("You did not specify the withdrawal amount.");
         } else if (params.amount < 50) {
             throw new APIError("The minimum withdrawal of funds from 50 rubles.");
-        } else if (!wallet) {
+        } else if (!params.wallet) {
             throw new APIError("Enter wallet / card number.");
         }
 
