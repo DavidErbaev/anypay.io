@@ -1,28 +1,4 @@
 {
-  "_from": "anypay.io",
-  "_id": "anypay.io@1.0.7",
-  "_inBundle": false,
-  "_integrity": "sha512-F7Ccg/8F+6i7l8Er76uYoZMcynDXbgepAEh1h+HZQ9tWF83NyY0oyV92GqAE2xXchPVXafyLzEYZSEOCSVMTzQ==",
-  "_location": "/anypay.io",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "anypay.io",
-    "name": "anypay.io",
-    "escapedName": "anypay.io",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/anypay.io/-/anypay.io-1.0.1.tgz",
-  "_shasum": "0477e7bf511be4136bf07c9ab5eb2484311c59e1",
-  "_spec": "anypay.io",
-  "_where": "C:\\Users\\Администратор\\Desktop\\Боты\\JS\\WlsBot",
   "author": {
     "name": "David Volkov",
     "url": "https://vk.com/id500580851"
