@@ -32,7 +32,7 @@ class API {
     getBalance() {
         return this.call({
             method: "balance",
-            sign: this.generateHash(
+            sign: generateHash(
                 `balance${this.options.apiId}${this.options.apiKey}`,
                 'sha256'),
         });
@@ -42,7 +42,7 @@ class API {
      */
     createPaymentLink(params = {}) {
         const key = this.options.secretKey;
-        return new Promise(function (resolve, reject) {
+        return new Promise(function (resolve) {
             if (!params.merchant) {
                 throw new APIError(`Invalid merchant id`)
             } else if (!params.amount) {
@@ -81,7 +81,7 @@ class API {
     getRates() {
         return this.call({
             method: "rates",
-            sign: this.generateHash(
+            sign: generateHash(
                 `rates${this.options.apiId}${this.options.apiKey}`,
                 'sha256'),
         });
@@ -98,7 +98,7 @@ class API {
         return this.call({
             method: "commissions",
             params: {
-                sign: this.generateHash(
+                sign: generateHash(
                     `commissions${this.options.apiId}${projectId}${this.options.apiKey}`,
                     'sha256'),
                 project_id: projectId,
@@ -122,7 +122,7 @@ class API {
         return this.call({
             method: "payments",
             params: {
-                sign: this.generateHash(
+                sign: generateHash(
                     `payments${this.options.apiId}${projectId}${this.options.apiKey}`,
                     'sha256'),
                 project_id: projectId,
@@ -136,7 +136,7 @@ class API {
     getPayouts() {
         return this.call({
             method: "payouts",
-            sign: this.generateHash(
+            sign: generateHash(
                 `payouts${this.options.apiId}${this.options.apiKey}`,
                 'sha256'),
         });
@@ -147,7 +147,7 @@ class API {
     getIps() {
         return this.call({
             method: "ip-notification",
-            sign: this.generateHash(
+            sign: generateHash(
                 `ip-notification${this.options.apiId}${this.options.apiKey}`,
                 'sha256'),
         });
@@ -177,7 +177,7 @@ class API {
             method: "create-payout",
             params: {
                 ...params,
-                sign: this.generateHash(
+                sign: generateHash(
                     `create-payout${this.options.apiId}${params.payout_id}${params.payout_type}${params.amount}${params.wallet}${this.options.apiKey}`,
                     'sha256'),
             },
@@ -186,6 +186,7 @@ class API {
 
     async createSession(ports, params = {}) {
         var port = ports || process.env.PORT
+        port = port < 1 ? port : process.env.PORT ? process.env.PORT : 3000
 
         if (!params.url) {
             throw new APIError(`You did not indicate what address the requests will come.`)
@@ -194,16 +195,20 @@ class API {
             throw new APIError(`Specify the handler`)
         }
 
-        app.get(params.url, async function (req, res) {
-            await params.handler(req, res);
-        })
+        var url;
+        if (params.url == `/${params.url}`) {
+            url = params.url
+        } else if (params.url == `${params.url}`) {
+            url = "/" + params.url
+        }
+        app.get(url, params.handler)
 
         app.listen(port, function (err) {
             if (err) {
                 throw new APIError(`Error:\n${err}`)
             }
 
-            console.log(`STARTED SESSION:\nURL: http://${ip.address()}:${port}${params.url}`);
+            console.log(`STARTED SESSION:\nURL: http://${ip.address()}:${port}${url}`);
         });
     }
     /**
@@ -243,7 +248,7 @@ class API {
      */
     async callMethod(request, url, response, headers, body) {
         if (request.params) {
-            url = this.generateUrl({
+            url = generateUrl({
                 url: `${this.apiUrl}/${request.method}/${this.options.apiId}?`,
                 query: request.params,
             });
@@ -265,23 +270,23 @@ class API {
             response
         };
     }
+}
 
-    generateUrl(params = {}) {
-        let url = `${params.url}${new URLSearchParams(params.query)}`;
+function generateUrl(params = {}) {
+    let url = `${params.url}${new URLSearchParams(params.query)}`;
 
-        return url;
-    }
+    return url;
+}
 
-    generateHash(text, type) {
-        if (type == "sha256") {
-            let sign = sha256(text);
+function generateHash(text, type) {
+    if (type == "sha256") {
+        let sign = sha256(text);
 
-            return sign;
-        } else if (type == "md5") {
-            let sign = md5(text)
+        return sign;
+    } else if (type == "md5") {
+        let sign = md5(text)
 
-            return sign;
-        }
+        return sign;
     }
 }
 
