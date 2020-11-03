@@ -10,6 +10,7 @@ var payment = new AnyPay({
 ```
 
 Разворачиваем сервер для принятия запросов с anypay.io
+
 ```js
 payment.api.createSession(port, {
    url: 'payment',
@@ -19,7 +20,8 @@ payment.api.createSession(port, {
    }
 }) // => Promise<Object>
 ```
-| Параметр | Тип | Описание | 
+
+| Параметр | Тип | Описание |
 |------------------|-------|------------------|
 | port | Number | Порт |
 | url | string | Ссылка на которую будут приходить post запросы |

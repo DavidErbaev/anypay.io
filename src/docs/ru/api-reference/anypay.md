@@ -9,18 +9,21 @@ const { AnyPay } = require('anypay.io')
 ```
 
 ## Constructor
+
 Инициализация новой инстанции
+
 ```js
-    new AnyPay([options])
+new AnyPay([options])
 ```
 
 Пример
+
 ```js
-   new AnyPay({
-        apiId: process.env.API_ID,
-        secretKey: process.env.SECRET_KEY,
-        apiKey: process.env.API_KEY
-   })
+new AnyPay({
+    apiId: process.env.API_ID,
+    secretKey: process.env.SECRET_KEY,
+    apiKey: process.env.API_KEY
+})
 ```
 
 | Параметр | Тип | Описание |
@@ -28,6 +31,7 @@ const { AnyPay } = require('anypay.io')
 | options  | string | [Опции](#options) |
 
 ## Options
+
 ### Общие опции
 
 | Опция | Тип | Описание | По умолчанию |
