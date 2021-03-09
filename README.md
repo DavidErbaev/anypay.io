@@ -1,15 +1,18 @@
 # anypay.io
 
 ## Description
+
 >[EN] Module for using the payment system API AnyPay.<br/>
 >[RU] Модуль для использования платежной системы API AnyPay.
 
 ## Installation
+
 ```bash
 npm i anypay.io
 ```
 
 ## Example
+
 ```js
 const { AnyPay } = require('anypay.io')
 const payment = new AnyPay({
@@ -26,7 +29,6 @@ const payment = new AnyPay({
 ```
 
 ## README
-   * [RU](src/docs/ru)
-   * [EN](src/docs/en)
 
-
+* [RU](docs/ru)
+* [EN](docs/en)

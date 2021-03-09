@@ -34,8 +34,8 @@ new AnyPay({
 
 ### Общие опции
 
-| Опция | Тип | Описание | По умолчанию |
-|----------|--------|-----------------------------------|--------------|
-| apiId    | string | API ID | null |
-| secretKey | string | secretKey | null |
-| apiKey | string | API Key | null |
+| Параметр  | Тип    | Описание                          |
+| --------- | ------ | --------------------------------- |
+| apiId     | string | API ID Profile - anypay.io        |
+| secretKey | string | SecretKey Project - anypay.io     |
+| apiKey    | string | API Key Profile - anypay.io       |
