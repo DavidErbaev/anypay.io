@@ -1,6 +1,7 @@
-const {
-    URLSearchParams
-} = require("url"),
+const fetch = require("node-fetch"),
+    {
+        URLSearchParams
+    } = require("url"),
     sha256 = require("sha256"),
     md5 = require('md5'),
     {
@@ -190,7 +191,7 @@ class API {
         }
         var port = ports || process.env.PORT
         params.port = port < 1 ? port : process.env.PORT ? process.env.PORT : 3000;
-        
+
         return createServer(params);
     }
 
