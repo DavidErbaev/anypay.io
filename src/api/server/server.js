@@ -17,7 +17,7 @@ function createServer(params = {}) {
     }
 
     const urlencodedParser = bodyParser.urlencoded({ extended: false });
-    if (params.method.length > 0) {
+    if (params.method.length <= 2) {
         params.method.map(function (method, i) {
             if (method == "POST") {
                 app.post(url, urlencodedParser, (req, res) => {
@@ -33,11 +33,11 @@ function createServer(params = {}) {
         if (method == "POST") {
             app.post(url, urlencodedParser, (req, res) => {
                 return params.handler(req, res);
-            })
+            });
         } else if (method == "GET") {
             app.get(url, urlencodedParser, function (req, res) {
                 return params.handler(req, res);
-            })
+            });
         }
     }
     let end = Date.now() - start;
