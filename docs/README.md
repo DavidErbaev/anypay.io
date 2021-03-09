@@ -1,4 +1,4 @@
 # README
 
-* [RU](docs/ru)
-* [EN](docs/en)
+* [RU](ru)
+* [EN](en)
