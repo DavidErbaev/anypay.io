@@ -1,15 +1,13 @@
-const fetch = require("node-fetch"),
-    {
-        URLSearchParams
-    } = require("url"),
+const {
+    URLSearchParams
+} = require("url"),
     sha256 = require("sha256"),
     md5 = require('md5'),
-    ip = require('ip'),
-    express = require("express"),
-    app = express(),
     {
         APIError
-    } = require("./apierror");
+    } = require("./error/apierror"),
+    { createServer } = require('./server/server.js');
+
 
 class API {
     constructor(anypay) {
@@ -185,32 +183,17 @@ class API {
     }
 
     async createSession(ports, params = {}) {
-        var port = ports || process.env.PORT
-        port = port < 1 ? port : process.env.PORT ? process.env.PORT : 3000
-
         if (!params.url) {
             throw new APIError(`You did not indicate what address the requests will come.`)
-        }
-        if (!params.handler) {
+        } else if (!params.handler) {
             throw new APIError(`Specify the handler`)
         }
-
-        var url;
-        if (params.url == `/${params.url}`) {
-            url = params.url
-        } else if (params.url == `${params.url}`) {
-            url = "/" + params.url
-        }
-        app.get(url, params.handler)
-
-        app.listen(port, function (err) {
-            if (err) {
-                throw new APIError(`Error:\n${err}`)
-            }
-
-            console.log(`STARTED SESSION:\nURL: http://${ip.address()}:${port}${url}`);
-        });
+        var port = ports || process.env.PORT
+        params.port = port < 1 ? port : process.env.PORT ? process.env.PORT : 3000;
+        
+        return createServer(params);
     }
+
     /**
      *
      * @param {JSON} request
@@ -272,11 +255,6 @@ class API {
     }
 }
 
-function generateUrl(params = {}) {
-    let url = `${params.url}${new URLSearchParams(params.query)}`;
-
-    return url;
-}
 
 function generateHash(text, type) {
     if (type == "sha256") {
