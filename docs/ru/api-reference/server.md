@@ -14,15 +14,17 @@ var payment = new AnyPay({
 ```js
 payment.api.createSession(port, {
    url: 'payment',
+   method: "POST",
    handler: (req, res) => {
-      res.json(req.query)
-      console.log(req.query)
+      res.json(req.body)
+      console.log(req.body)
    }
 }) // => Promise<Object>
 ```
 
-| Параметр  | Тип      | Описание                                             |
-| --------- | -------- | ---------------------------------------------------- |
-| port      | Number   | Порт для создание web-сервера                        |
-| url       | string   | Ссылка на которую будут отпраляться запросы          |
-| handler   | function | Обработчик для обработки запросов req.body/req.query |
+| Параметр  | Тип      | Описание                                             | По умолчанию |
+| --------- | -------- | ---------------------------------------------------- | ------------ |
+| port      | Number   | Порт для создание web-сервера                        | 3000         |
+| url       | string   | Ссылка на которую будут отпраляться запросы          | undefined    |
+| method    | string   | Метод GET/POST для принятие запросов с сервера       | POST         |
+| handler   | function | Обработчик для обработки запросов req.body/req.query | undefined    |
