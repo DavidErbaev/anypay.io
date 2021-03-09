@@ -10,6 +10,7 @@ var payment = new AnyPay({
 ```
 
 Создаем ссылку на оплату
+
 ```js
 await payment.api.createPaymentLink({
      merchant: 5195,
@@ -19,18 +20,21 @@ await payment.api.createPaymentLink({
      params: { field1: 1, field2: 2 }
  }) // => Promise<object>
 ```
+
 Параметры
-| Параметр | Тип | Описание |
-|-----------|-------|------------------|
-| merchant | number | Id проекта |
-| amount | number | Сумма оплаты |
-| desc | string | Описания платежа |
-| currency | string | Валюта |
-| pay_id | number | Id платежа |
-| params | object | Параметры |
+
+| Параметр  | Тип      | Описание                                        |
+| --------- | -------- | ----------------------------------------------- |
+| merchant  | Number   | Id Проекта AnyPay                               |
+| amount    | Number   | Сумма оплаты платежа                            |
+| desc      | Number   | Описание платежа                                |
+| currency  | Number   | Валюта оплаты                                   |
+| pay_id    | Number   | Id Платежа                                      |
+| params    | Number   | Параметры которые буду возвращены в обработчик  |
 
 Возвращает следующие свойства
-| Параметр | Тип | Описание |
-|----------|--------|------------------|
-| url | string | Ссылка на оплату |
-| ping | string | скорость создание ссылки |
+
+| Параметр  | Тип     | Описание                 |
+| --------- | ------- | ------------------------ |
+| url       | string  | Ссылка на оплату         |
+| ping      | string  | Скорость создание ссылки |
