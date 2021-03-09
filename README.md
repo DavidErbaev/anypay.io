@@ -2,7 +2,7 @@
 
 ## Description
 
->[EN] Module for using the payment system API AnyPay.\
+>[EN] Module for using the payment system API AnyPay.
 >[RU] Модуль для использования платежной системы API AnyPay.
 
 ## Installation
