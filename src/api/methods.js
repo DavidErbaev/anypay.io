@@ -189,9 +189,9 @@ class API {
         } else if (!params.handler) {
             throw new APIError(`Specify the handler`)
         }
-        var port = ports || process.env.PORT
-        params.port = port < 1 ? port : process.env.PORT ? process.env.PORT : 3000;
-
+        params.port = ports !== undefined ? ports > 1 ? ports : 3000 : 3000
+        console.log(ports, params.port)
+        
         return createServer(params);
     }
 
