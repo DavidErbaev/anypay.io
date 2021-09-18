@@ -20,22 +20,24 @@ new AnyPay([options])
 
 ```js
 new AnyPay({
-    apiId: process.env.API_ID,
+    api_id: process.env.API_ID,
+    api_key: process.env.API_KEY,
+    merchant_id: process.env.MERCHANT_ID,
     secretKey: process.env.SECRET_KEY,
-    apiKey: process.env.API_KEY
 })
 ```
 
 | Параметр | Тип | Описание |
 |----------|--------|-------------------|
-| options  | string | [Опции](#options) |
+| options  | Object | [Опции](#options) |
 
 ## Options
 
 ### Общие опции
 
-| Параметр  | Тип    | Описание                          |
-| --------- | ------ | --------------------------------- |
-| apiId     | string | API ID Profile - anypay.io        |
-| secretKey | string | SecretKey Project - anypay.io     |
-| apiKey    | string | API Key Profile - anypay.io       |
+| Параметр    | Тип    | Описание                          |
+| ----------- | ------ | --------------------------------- |
+| api_id      | Number | API ID Profile - anypay.io        |
+| api_key     | String | API Key Profile - anypay.io       |
+| merchant_id | Number | Project ID - anypay.io            |
+| secretKey   | String | SecretKey Project - anypay.io     |
