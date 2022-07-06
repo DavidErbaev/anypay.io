@@ -146,7 +146,7 @@ class API {
 			...params,
 			sign: utils.generateHash(
 				`${params.currency}:${params.amount}:${this.options.secretKey}:${params.merchant_id}:${params.pay_id}`,
-				"md5",
+				"sha256",
 			),
 		});
 		return url + queryString;
